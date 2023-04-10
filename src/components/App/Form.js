@@ -26,6 +26,7 @@ export default class Form extends Component {
 
             postTrick(newTrick)
 
+            this.props.handler(newTrick)
     }
 
   render() {

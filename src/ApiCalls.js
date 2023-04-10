@@ -5,7 +5,6 @@ function getTricks() {
 }
 
 function postTrick(trick) {
-    console.log(trick)
     return fetch('http://localhost:3001/api/v1/tricks', {
         method: "POST",
         headers: {
