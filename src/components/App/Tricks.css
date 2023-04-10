@@ -1,0 +1,13 @@
+
+.trickbox-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.trick-box {
+    background-color: white;
+    width: 30vw;
+}

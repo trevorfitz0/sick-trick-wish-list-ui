@@ -5,5 +5,4 @@ function getTricks() {
 }
 
 
-
 export default getTricks

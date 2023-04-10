@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css'
 import Tricks from './Tricks';
 import getTricks from '../../ApiCalls';
+import Form from './Form';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ componentDidMount() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <Form/>
         <Tricks tricks={this.state.tricks}/>
       </div>
     );
