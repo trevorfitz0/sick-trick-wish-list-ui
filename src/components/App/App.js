@@ -28,7 +28,7 @@ submitAppForm(data) {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form tricks={this.state.tricks}/>
+        <Form handler = {this.handler}/>
         <Tricks tricks={this.state.tricks}/>
       </div>
     );

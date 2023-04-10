@@ -5,10 +5,9 @@ import { getTricks, postTrick } from '../../ApiCalls'
 
 export default class Form extends Component {
 
-    constructor({tricks}) {
+    constructor() {
         super()
         this.state = {
-            tricks: tricks,
             stance: '',
             obstacle: '',
             name: '', 
@@ -17,15 +16,16 @@ export default class Form extends Component {
     }
 
     submitAppForm() {
-        postTrick({ 
+        const newTrick = { 
                 stance: this.state.stance, 
                 name: this.state.name, 
                 obstacle: this.state.obstacle, 
                 tutorial: this.state.tutorial,
                 id: Math.floor(Math.random() * 1000)
-            })
+            }
 
-            window.location.reload(false)
+            postTrick(newTrick)
+
     }
 
   render() {
@@ -33,7 +33,7 @@ export default class Form extends Component {
         <div className='form'>
             <input placeholder='Trick Name' type='text' className='form-element' onInput={(e) => this.setState({ name: e.target.value})}></input>
             <select className='form-element' onChange={(e) => this.setState({ stance: e.target.value})}>
-                <option value="regular">Stance Type </option>
+                <option value="regular">Stance Type</option>
                 <option value="regular">Regular </option>
                 <option value="switch">Switch</option>
             </select>

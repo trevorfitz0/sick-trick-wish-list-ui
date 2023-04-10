@@ -16,3 +16,19 @@ describe('Page Load', () => {
         cy.get('.trickbox-area > :nth-child(1)').contains('treflip')
     })
 })
+
+
+describe('API Calls', () => {
+    it('Should post to API', () => {
+        cy.intercept({
+            method: 'POST',
+            url: 'http://localhost:3001/api/v1/tricks',
+        }).as('new trick')
+    })
+    it('Should delete to API', () => {
+        cy.intercept({
+            method: 'DELETE',
+            url: 'http://localhost:3001/api/v1/tricks',
+        }).as('remove trick')
+    })
+})

@@ -16,5 +16,14 @@ function postTrick(trick) {
 
 }
 
+function removeTrick(trick) {
+    return fetch(`http://localhost:3001/api/v1/tricks/${trick.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+}
 
-export {getTricks, postTrick}
+
+export {getTricks, postTrick, removeTrick}

@@ -11,3 +11,7 @@
     background-color: white;
     width: 30vw;
 }
+
+.remove-trick {
+    float: right;
+}
