@@ -3,8 +3,6 @@ import './Tricks.css'
 
 function Tricks({tricks}) {
 
-    console.log(tricks)
-
     const allTricks = tricks.map(trick => {
         return (
             <div className='trick-box'>

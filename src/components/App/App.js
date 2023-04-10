@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css'
 import Tricks from './Tricks';
-import getTricks from '../../ApiCalls';
+import { getTricks, postTrick } from '../../ApiCalls';
 import Form from './Form';
 
 
@@ -19,11 +19,16 @@ componentDidMount() {
     .then(data => this.setState({ tricks: data}))
 }
 
+submitAppForm(data) {
+  postTrick(data)
+  this.state.tricks.push(data)
+}
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form/>
+        <Form tricks={this.state.tricks}/>
         <Tricks tricks={this.state.tricks}/>
       </div>
     );
